@@ -243,13 +243,54 @@ CREATE POLICY "Admins can manage services"
   USING (is_admin());
 
 -- Contacts policies
+-- Policy 1: Allow anyone (including anonymous users) to INSERT contacts
 CREATE POLICY "Public can create contacts"
   ON public.contacts FOR INSERT
+  TO anon, authenticated
   WITH CHECK (true);
 
-CREATE POLICY "Admins can manage contacts"
-  ON public.contacts FOR ALL
-  USING (is_admin());
+-- Policy 2: Allow admins to view all contacts (for admin panel)
+CREATE POLICY "Admins can view all contacts"
+  ON public.contacts FOR SELECT
+  TO authenticated
+  USING (
+    EXISTS (
+      SELECT 1 FROM public.users 
+      WHERE id = auth.uid() 
+      AND role = 'admin'
+    )
+  );
+
+-- Policy 3: Allow admins to UPDATE contacts
+CREATE POLICY "Admins can update contacts"
+  ON public.contacts FOR UPDATE
+  TO authenticated
+  USING (
+    EXISTS (
+      SELECT 1 FROM public.users 
+      WHERE id = auth.uid() 
+      AND role = 'admin'
+    )
+  )
+  WITH CHECK (
+    EXISTS (
+      SELECT 1 FROM public.users 
+      WHERE id = auth.uid() 
+      AND role = 'admin'
+    )
+  );
+
+-- Policy 4: Allow admins to DELETE contacts
+CREATE POLICY "Admins can delete contacts"
+  ON public.contacts FOR DELETE
+  TO authenticated
+  USING (
+    EXISTS (
+      SELECT 1 FROM public.users 
+      WHERE id = auth.uid() 
+      AND role = 'admin'
+    )
+  );
 
 -- Bookings policies
 -- Policy 1: Allow anyone (including anonymous users) to INSERT bookings
