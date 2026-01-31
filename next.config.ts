@@ -13,9 +13,8 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  serverActions: {
-    bodySizeLimit: '10mb', // Increase limit to 10MB for image uploads
-  },
+  // Server Actions are enabled by default in Next.js 15
+  // Body size limit is handled by the runtime, not config
 };
 
 export default nextConfig;
