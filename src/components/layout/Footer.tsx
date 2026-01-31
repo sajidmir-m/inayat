@@ -40,13 +40,23 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-slate-300 leading-relaxed max-w-sm text-base">
-              Crafting premium travel experiences in Kashmir since 2024. We believe in journeys that touch the soul and respect the land.
+              Crafting premium travel experiences in Kashmir since 2012 . We believe in journeys that touch the soul and respect the land.
             </p>
             <div className="flex space-x-3">
-              <Link href="#" className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-blue-600 transition-all duration-300 hover:scale-110 border border-white/10">
+              <Link 
+                href="https://www.instagram.com/khaleejtravelcompany?igsh=OW01ZHpldWx1aTZ1" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-blue-600 transition-all duration-300 hover:scale-110 border border-white/10"
+              >
                 <Instagram className="w-5 h-5" />
               </Link>
-              <Link href="#" className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-blue-600 transition-all duration-300 hover:scale-110 border border-white/10">
+              <Link 
+                href="https://www.facebook.com/share/17z7D6Nc6A/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-blue-600 transition-all duration-300 hover:scale-110 border border-white/10"
+              >
                 <Facebook className="w-5 h-5" />
               </Link>
               <Link href="#" className="w-11 h-11 rounded-xl bg-white/10 backdrop-blur-sm flex items-center justify-center hover:bg-blue-600 transition-all duration-300 hover:scale-110 border border-white/10">
@@ -132,19 +142,19 @@ export default function Footer() {
                 <div className="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center shrink-0 mt-0.5">
                   <MapPin className="w-5 h-5 text-blue-400" />
                 </div>
-                <span className="text-base leading-relaxed">Boulevard Road, Dal Gate,<br />Srinagar, Kashmir 190001</span>
+                <span className="text-base leading-relaxed">Main Road, Dal Gate,<br />Srinagar, Kashmir 190001</span>
               </li>
               <li className="flex items-center gap-3 text-slate-300">
                 <div className="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center shrink-0">
                   <Phone className="w-5 h-5 text-blue-400" />
                 </div>
-                <span className="text-base">+91 98765 43210</span>
+                <span className="text-base">+91 99069 10747</span>
               </li>
               <li className="flex items-center gap-3 text-slate-300">
                 <div className="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center shrink-0">
                   <Mail className="w-5 h-5 text-blue-400" />
                 </div>
-                <span className="text-base">hello@khaleejtravels.com</span>
+                <span className="text-base">khaleejtourtravels@gmail.com</span>
               </li>
             </ul>
           </motion.div>
@@ -152,7 +162,7 @@ export default function Footer() {
 
         <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-slate-400 text-sm">
-            © 2024 Khaleej Tour and Travel. All rights reserved.
+            © 2012 Khaleej Tour and Travel. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm text-slate-400">
             <Link href="#" className="hover:text-blue-400 transition-colors">Privacy Policy</Link>
